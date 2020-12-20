@@ -1,4 +1,4 @@
-const qrcode = window.qrcode;
+const qrCode = window.qrcode;
 
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");
@@ -10,7 +10,7 @@ const btnScanQR = document.getElementById("btn-scan-qr");
 
 let scanning = false;
 
-qrcode.callback = (res) => {
+qrCode.callback = (res) => {
     if (res) {
       outputData.innerText = res;
       scanning = false;
