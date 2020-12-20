@@ -46,6 +46,33 @@ window.onload = () => {
   }
 }
 
+function pickUp() {
+  for (i = 0; i < orders.length; i++) {
+    let statusElement = document.getElementsByClassName('order-status');
+    if (res == orders[i].id) {
+      orders[i].status = 'picked-up'
+      for (j = 0; j < orders.length; j++) {
+        if (orders[i].id == statusElement.getAttribute('data-order-id')) {
+          this.statusElement.innerText = '&#9989;';
+          j = orders.length;
+        }
+      }
+      i = orders.length;  
+    } 
+    if (i == orders.length && res !== orders[i].id) {
+      alert('This order is not assigned to you. Please return it to the pharmacy.');
+    }
+    }
+   for (i = 0; i < orders.length; i++) {
+     if (orders[i].status === 'not-picked-up') {
+       i = orders.length;
+     } else {
+       const startRouteButton = document.getElementById('start-route');
+       startRouteButton.setAttribute('style','display: initial;');
+     }
+   } 
+  }
+
 let scanning = false;
 
 qrCode.callback = (res) => {
@@ -57,12 +84,11 @@ qrCode.callback = (res) => {
       video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
-
-      pickUp();
   
       qrResult.hidden = false;
       btnScanQR.hidden = false;
       canvasElement.hidden = true;
+      pickUp();
     }
   };
 
@@ -100,29 +126,4 @@ function tick() {
     }
   }
   
-  function pickUp() {
-    for (i = 0; i < orders.length; i++) {
-      let statusElement = document.getElementsByClassName('order-status');
-      if (res == orders[i].id) {
-        orders[i].status = 'picked-up'
-        for (j = 0; j < orders.length; j++) {
-          if (orders[i].id == statusElement.getAttribute('data-order-id')) {
-            this.statusElement.innerText = '&#9989;';
-            j = orders.length;
-          }
-        }
-        i = orders.length;  
-      } 
-      if (i == orders.length && res !== orders[i].id) {
-        alert('This order is not assigned to you. Please return it to the pharmacy.');
-      }
-      }
-     for (i = 0; i < orders.length; i++) {
-       if (orders[i].status === 'not-picked-up') {
-         i = orders.length;
-       } else {
-         const startRouteButton = document.getElementById('start-route');
-         startRouteButton.setAttribute('style','display: initial;');
-       }
-     } 
-    }
+  
