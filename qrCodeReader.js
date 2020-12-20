@@ -25,7 +25,8 @@ qrcode.callback = (res) => {
     }
   };
 
-  btnScanQR.onclick = () => {
+  btnScanQR.onclick = (event) => {
+  event.preventDefault();
   navigator.mediaDevices
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
