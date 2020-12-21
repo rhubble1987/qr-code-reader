@@ -11,7 +11,7 @@
             <h1>QR Code Scanner</h1>
         
             <button id="btn-scan-qr">
-                Scan
+                Scan Orders
             </button>
         
             <canvas hidden="" id="qr-canvas"></canvas>
@@ -19,8 +19,11 @@
             <div id="qr-result">
                 
             </div>
+        <div id="all-checked-in" style="display: none;">
+            <h2>All orders have been checked in. Have a good drive!</h2> 
+            <button id="start-route" style="display: none;">Start Route</button>
+        </div>
         
-        <button id="start-route" style="display: none;">Start Route</button>
         </div>
         
         <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
