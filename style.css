@@ -6,4 +6,8 @@ html {
     margin: auto;
     width: calc(100% - 20px);
     max-width: 400px;
-  } 
+  }
+  
+  #btn-scan-qr {
+    cursor: pointer;
+  }
