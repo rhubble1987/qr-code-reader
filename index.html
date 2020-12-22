@@ -3,26 +3,32 @@
     <head>
         <title>QR Code Reader</title>
         <link rel="stylesheet" href="style.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     </head>
-    <body>
+    <body class="p-3">
         <div id="container">
-            <h1>Scan Your Orders In</h1>
-        
-            <button id="btn-scan-qr">
+            <h1 class="text-center">Scan Your Orders In</h1>
+            <hr>
+            <div class="text-center">
+            <button class="btn-lg" id="btn-scan-qr">
                 Scan Order
             </button>
-        
-            <canvas hidden="" id="qr-canvas"></canvas>
+            </div>
+            
+            <hr>
+            
+            <div class="text-center">
+            <canvas hidden id="qr-canvas"></canvas>
+            </div>
         
             <div id="qr-result">
-                
             </div>
-        <div id="all-checked-in" style="display: none;">
+            <div id="all-checked-in" class="text-center" hidden>
             <h2>All orders have been checked in. Have a good drive!</h2> 
-            <button id="start-route" style="display: none;">Start Route</button>
-        </div>
+            <button class="btn-lg" id="start-route">Start Route</button>
+            </div>
         
         </div>
         
